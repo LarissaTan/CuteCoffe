@@ -18,7 +18,7 @@
             />
         <TextView
             android:id="@+id/tv_bar_function"
-            android:text="充值"
+            android:text="Charge"
             android:textColor="@color/black"
             android:gravity="center"
             android:textSize="20dp"

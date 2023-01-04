@@ -14,9 +14,6 @@ import com.example.cutecoffee.bean.StoreBean;
 import java.util.List;
 
 
-/**
- * 首页所有商家的Adapter
- */
 public class AllStoresAdapter extends RecyclerView.Adapter<AllStoresAdapter.ViewHolder>{
 
     //设置数据源
@@ -46,42 +43,10 @@ public class AllStoresAdapter extends RecyclerView.Adapter<AllStoresAdapter.View
 
     @Override
     public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
-        switch (storeBeans.get(position).getIv_store_pic()){
-            case "0":
-                holder.iv_store_pic.setImageResource(R.mipmap.store_1);
-                break;
-            case "1":
-                holder.iv_store_pic.setImageResource(R.mipmap.store_2);
-                break;
-            case "2":
-                holder.iv_store_pic.setImageResource(R.mipmap.store_3);
-                break;
-            case "3":
-                holder.iv_store_pic.setImageResource(R.mipmap.store_4);
-                break;
-            case "4":
-                holder.iv_store_pic.setImageResource(R.mipmap.store_5);
-                break;
-            case "5":
-                holder.iv_store_pic.setImageResource(R.mipmap.store_6);
-                break;
-            case "6":
-                holder.iv_store_pic.setImageResource(R.mipmap.store_7);
-                break;
-            case "7":
-                holder.iv_store_pic.setImageResource(R.mipmap.store_8);
-                break;
-            case "8":
-                holder.iv_store_pic.setImageResource(R.mipmap.store_9);
-                break;
-            case "9":
-                holder.iv_store_pic.setImageResource(R.mipmap.store_10);
-                break;
-        }
+        holder.iv_store_pic.setImageResource(R.mipmap.store_1);
         holder.tv_storeName.setText(storeBeans.get(position).getStoreName());
-        holder.tv_storeScore.setText(storeBeans.get(position).getStoreScore()+"分");
-        holder.tv_storeSell.setText(storeBeans.get(position).getStoreSell()+"份");
-        holder.tv_storeSign.setText(storeBeans.get(position).getStoreSign());
+        holder.tv_storeScore.setText(storeBeans.get(position).getStoreScore());
+        holder.tv_storeSell.setText(storeBeans.get(position).getStoreSell());
 
     }
 
@@ -100,17 +65,15 @@ public class AllStoresAdapter extends RecyclerView.Adapter<AllStoresAdapter.View
             private TextView tv_storeName ;
             private TextView tv_storeScore ;
             private TextView tv_storeSell ;
-            private TextView tv_storeSign;
 
             public ViewHolder(@NonNull View itemView) {
                 super(itemView);
 
-                //绑定控件
+
                 iv_store_pic = itemView.findViewById(R.id.iv_store_pic);
                 tv_storeName = itemView.findViewById(R.id.tv_storeName);
                 tv_storeScore = itemView.findViewById(R.id.tv_store_score);
                 tv_storeSell = itemView.findViewById(R.id.tv_store_sell);
-                tv_storeSign = itemView.findViewById(R.id.tv_store_sign);
 
                 //实现item点击事件
                 itemView.setOnClickListener(new View.OnClickListener() {
@@ -128,7 +91,6 @@ public class AllStoresAdapter extends RecyclerView.Adapter<AllStoresAdapter.View
     /**
      * RecycleView 的 点击事件 的 接口
      */
-    //item点击事件接口
     public interface  OnItemClickListener  {
         void onClick(View v, int position, StoreBean storeBean);
     }

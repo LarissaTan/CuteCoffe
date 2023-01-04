@@ -18,9 +18,7 @@ import com.example.cutecoffee.util.MySQLiteHelper;
 
 import java.text.DecimalFormat;
 
-/**
- *  我的钱包activity
- */
+
 public class MyAccountActivity extends AppCompatActivity {
 
     private TextView tv_bar_title;
@@ -29,9 +27,6 @@ public class MyAccountActivity extends AppCompatActivity {
     private TextView tv_userName;
     private TextView tv_money;
     private TextView tv_phoneNumb;
-    private TextView tv_schoolName;
-    private TextView tv_apartmentNumb;
-    private ImageView iv_personal_pic;
     private Userinfo userinfo;
     private double newMoney;
     private int myUserID;
@@ -49,16 +44,13 @@ public class MyAccountActivity extends AppCompatActivity {
     }
 
 
-    /**设置ActionBar**/
     private void setActionBar() {
         setSupportActionBar(toolbar);
-        /*显示Home图标*/
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
-        //设置不显示项目名称
         getSupportActionBar().setDisplayShowTitleEnabled(false);
     }
     @Override
-    //为toolbar设置返回按钮
+    //set return button for tool bar
     public boolean onOptionsItemSelected(@NonNull MenuItem item) {
         if(item.getItemId() == android.R.id.home)
         {
@@ -76,50 +68,23 @@ public class MyAccountActivity extends AppCompatActivity {
 
 
     private void initView() {
-        //初始化控件
         toolbar = findViewById(R.id.toolbar);
         tv_bar_title = findViewById(R.id.tv_bar_title);
-        tv_bar_title.setText("我的钱包");
+        tv_bar_title.setText("My Wallet");
         tv_recharge = findViewById(R.id.tv_bar_function);
         tv_recharge.setVisibility(View.VISIBLE);
         tv_userName = findViewById(R.id.tv_username_acc);
         tv_money = findViewById(R.id.tv_money);
         tv_phoneNumb = findViewById(R.id.tv_phoneNumb_acc);
-        tv_schoolName = findViewById(R.id.tv_schoolName_acc);
-        tv_apartmentNumb = findViewById(R.id.tv_apartmentNumb_acc);
-        iv_personal_pic = findViewById(R.id.iv_personal_pic);
+
 
         tv_userName.setText(userinfo.getUserName());
-        //不使用科学计数法显示double类型数据，解决显示错误问题
         df = new DecimalFormat("0.00");
         result = df.format(userinfo.getMoney());
-        tv_money.setText(result+"元");
+        tv_money.setText(result+"$");
         tv_phoneNumb.setText(userinfo.getPhoneNumb());
-        tv_schoolName.setText(userinfo.getSchoolName());
-        tv_apartmentNumb.setText(userinfo.getApartmentNumb());
 
-        switch (myUserID){
-            case 1:
-                iv_personal_pic.setImageResource(R.drawable.tx_1_48);
-                break;
-            case 2:
-                iv_personal_pic.setImageResource(R.drawable.tx_2_48);
-                break;
-            case 3:
-                iv_personal_pic.setImageResource(R.drawable.tx_3_48);
-                break;
-            case 4:
-                iv_personal_pic.setImageResource(R.drawable.tx_4_48);
-                break;
-            case 5:
-                iv_personal_pic.setImageResource(R.drawable.tx_5_48);
-                break;
-            case 6:
-                iv_personal_pic.setImageResource(R.drawable.tx_6_48);
-                break;
-        }
 
-        /**充值的点击事件 */
         tv_recharge.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -130,23 +95,17 @@ public class MyAccountActivity extends AppCompatActivity {
 
     }
 
-    /**
-     *充值完成后，回到我的钱包界面时刷新金额数据
-     */
+
+
     private void refreshMoney(){
         newMoney = MySQLiteHelper.getInstance(getApplicationContext()).getUserMoneyFromUserName(MainActivity.username);
         //不使用科学计数法显示double类型数据，解决显示错误问题
         df = new DecimalFormat("0.00");
         result = df.format(newMoney);
-        tv_money.setText(result +"元");
+        tv_money.setText(result +"$");
     }
 
-    /**
-     * 接受跳转的返回值并进行操作
-     * @param requestCode
-     * @param resultCode
-     * @param data
-     */
+
     @Override
     protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
         super.onActivityResult(requestCode, resultCode, data);

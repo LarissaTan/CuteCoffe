@@ -50,12 +50,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         btn_login.setOnClickListener(this);
         btn_register.setOnClickListener(this);
 
-        //清除表中所有数据
-        //   MySQLiteHelper.getInstance(this).deleateAllUserInfo();
-
-        //打印所有用户名和密码记录信息
-        List<Userinfo> userinfoList = MySQLiteHelper.getInstance(this).queryAlluserInfo();
-        //Log.e("userinfoList", userinfoList.toString());
+        this.deleteDatabase("ShoppingMallInfo");
+        this.deleteDatabase("db");
 
 
         if (ShareUtils.getRember().equals("1")) {
@@ -70,9 +66,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         if (ShareUtils.getAuto_Login().equals("1")) {
             autologin.setChecked(true);
             if (TextUtils.isEmpty(et_username.getText()) || TextUtils.isEmpty(et_password.getText())) {
-                Toast.makeText(this, "用户名密码为空", Toast.LENGTH_SHORT).show();
+                Toast.makeText(this, "your user name or password is null...", Toast.LENGTH_SHORT).show();
             } else {
-                //登陆成功进入的页面
                 startActivity(new Intent(this, HomeAllStoresActivity.class));
                 username = ShareUtils.getUserName();
                 this.finish();
@@ -90,7 +85,6 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                     //System.out.println("记住密码已被选中");
                     ShareUtils.putRember("1");
                 }else {
-                    //System.out.println("记住密码没有被选中");
                     ShareUtils.putRember("0");
                 }
             }
@@ -105,7 +99,6 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                     //System.out.println("自动登录被选中");
                     ShareUtils.putAuto_Login("1");
                 }else {
-                    //System.out.println("自动登录没有被选中");
                     ShareUtils.putAuto_Login("0");
                 }
             }
@@ -118,10 +111,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             case R.id.M_login:
                 username = et_username.getText().toString();
                 password = et_password.getText().toString();
-                //            Log.e("password   " ,password);
-                //            Log.e("username   " ,username);
                 if (TextUtils.isEmpty(username)  || TextUtils.isEmpty(password)) {
-                    Toast.makeText(MainActivity.this, "用户名或密码不能为空", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(MainActivity.this, "username or password can not be null", Toast.LENGTH_SHORT).show();
                     return;
 
                 }
@@ -130,11 +121,11 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                         ShareUtils.putUserName(username);
                         ShareUtils.putPassword(password);
                     }
-                    Toast.makeText(MainActivity.this, "登陆成功", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(MainActivity.this, "Login successfully", Toast.LENGTH_SHORT).show();
                     startActivity(new Intent(this, HomeAllStoresActivity.class));
                     MainActivity.this.finish();
                 }else {
-                    Toast.makeText(MainActivity.this, "登录失败,用户名或密码错误", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(MainActivity.this, "Failed to login", Toast.LENGTH_SHORT).show();
                     return;
                 }
                 break;

@@ -13,9 +13,6 @@ import com.example.cutecoffee.bean.Userinfo;
 import java.util.ArrayList;
 import java.util.List;
 
-/**
- *SQlite执行操作的封装工具类
- */
 public class MySQLiteHelper {
 
     private static MySQLiteHelper mySQLiteHelper;
@@ -36,7 +33,7 @@ public class MySQLiteHelper {
 
     //将注册的用户名密码插入到表中
     public void insertUserinfo(Userinfo userinfo) {
-        db.execSQL("insert into userInfo(userName,password,nickName,phoneNumb,schoolName,apartmentNumb,money) values(?,?,?,?,?,?,?)", new Object[]{userinfo.getUserName(), userinfo.getPassword(),userinfo.getNickName(),userinfo.getPhoneNumb(),userinfo.getSchoolName(),userinfo.getApartmentNumb(),0});
+        db.execSQL("insert into userInfo(userName,password,nickName,phoneNumb,schoolName,apartmentNumb,money) values(?,?,?,?)", new Object[]{userinfo.getUserName(), userinfo.getPassword(),userinfo.getPhoneNumb(),0});
         //Log.e("插入语句:", "插入已执行，插入成功");
     }
 
@@ -61,33 +58,6 @@ public class MySQLiteHelper {
         return false;
     }
 
-    //查询所有的用户名和密码信息并返回
-    public List<Userinfo> queryAlluserInfo() {
-        List<Userinfo> userinfos = new ArrayList<>();
-        Cursor cursor = db.rawQuery("select * from userInfo ", null);
-        if (cursor != null && cursor.getCount() > 0) {
-            while (cursor.moveToNext()) {
-                Userinfo userinfo = new Userinfo();
-                userinfo.setId(cursor.getInt(0));
-                userinfo.setUserName(cursor.getString(1));
-                userinfo.setPassword(cursor.getString(2));
-                userinfo.setNickName(cursor.getString(3));
-                userinfo.setPhoneNumb(cursor.getString(4));
-                userinfo.setSchoolName(cursor.getString(5));
-                userinfo.setApartmentNumb(cursor.getString(6));
-                userinfo.setMoney(cursor.getDouble(7));
-                userinfos.add(userinfo);
-            }
-        }
-        return userinfos;
-    }
-
-    //删除用户名密码表中的所有数据
-    public void deleateAllUserInfo() {
-        db.execSQL("DELETE  from  userInfo");
-    }
-
-    //查询用户个人信息
     public Userinfo  getUserInfoFromUserName(String userName){
         Userinfo userinfo = new Userinfo();
         Cursor cursor = db.rawQuery("SELECT * FROM userInfo WHERE userName LIKE ? ",
@@ -96,28 +66,14 @@ public class MySQLiteHelper {
             while (cursor.moveToNext()) {
                 userinfo.setUserName(cursor.getString(1));
                 userinfo.setPassword(cursor.getString(2));
-                userinfo.setNickName(cursor.getString(3));
-                userinfo.setPhoneNumb(cursor.getString(4));
-                userinfo.setSchoolName(cursor.getString(5));
-                userinfo.setApartmentNumb(cursor.getString(6));
-                userinfo.setMoney(cursor.getDouble(7));
+                userinfo.setPhoneNumb(cursor.getString(3));
+                userinfo.setMoney(cursor.getDouble(4));
             }
         }
 
         return userinfo;
     }
 
-
-
-    //修改相关用户信息
-    public void updateUserInfo(Userinfo userinfo){
-        db.execSQL("update userInfo set nickName = ?,phoneNumb = ?,schoolName = ?,apartmentNumb = ? where userName like ?",new String[]{userinfo.getNickName(),
-                userinfo.getPhoneNumb(),userinfo.getSchoolName(),userinfo.getApartmentNumb(),userinfo.getUserName()});
-
-    }
-
-
-    //拿到当前用户ID
     public int GetUserId(String userName){
         Userinfo userinfo = new Userinfo();
         Cursor cursor = db.rawQuery("SELECT * FROM userInfo WHERE userName LIKE ? ",
@@ -157,8 +113,6 @@ public class MySQLiteHelper {
                 storeBean.setStoreName(cursor.getString(3));
                 storeBean.setStoreScore(cursor.getString(4));
                 storeBean.setStoreSell(cursor.getString(5));
-                storeBean.setStoreSign(cursor.getString(6));
-                storeBean.setStoreIntro(cursor.getString(7));
             }
         }
         return storeBean;
@@ -185,7 +139,6 @@ public class MySQLiteHelper {
                 storeBean.setStoreName(cursor.getString(3));
                 storeBean.setStoreScore(cursor.getString(4));
                 storeBean.setStoreSell(cursor.getString(5));
-                storeBean.setStoreSign(cursor.getString(6));
                 storeBeans.add(storeBean);
             }
         }

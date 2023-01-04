@@ -99,44 +99,12 @@ public class StoreGoodsActivity extends AppCompatActivity {
         tv_storeScore = findViewById(R.id.tv_store_score_act);
         tv_storeSell = findViewById(R.id.tv_store_sell_act);
         tv_storeSign = findViewById(R.id.tv_store_sign_act);
+        iv_pic.setImageResource(R.mipmap.store_1);
 
-        switch (storeBean.getIv_store_pic()){
-            case "0":
-                iv_pic.setImageResource(R.mipmap.store_1);
-                break;
-            case "1":
-                iv_pic.setImageResource(R.mipmap.store_2);
-                break;
-            case "2":
-                iv_pic.setImageResource(R.mipmap.store_3);
-                break;
-            case "3":
-                iv_pic.setImageResource(R.mipmap.store_4);
-                break;
-            case "4":
-                iv_pic.setImageResource(R.mipmap.store_5);
-                break;
-            case "5":
-                iv_pic.setImageResource(R.mipmap.store_6);
-                break;
-            case "6":
-                iv_pic.setImageResource(R.mipmap.store_7);
-                break;
-            case "7":
-                iv_pic.setImageResource(R.mipmap.store_8);
-                break;
-            case "8":
-                iv_pic.setImageResource(R.mipmap.store_9);
-                break;
-            case "9":
-                iv_pic.setImageResource(R.mipmap.store_10);
-                break;
-        }
 
         tv_storeName.setText(storeBean.getStoreName());
-        tv_storeScore.setText(storeBean.getStoreScore()+"分");
-        tv_storeSell.setText("月销量："+storeBean.getStoreSell());
-        tv_storeSign.setText(storeBean.getStoreSign());
+        tv_storeScore.setText(storeBean.getStoreScore());
+        tv_storeSell.setText("Monthly sales："+storeBean.getStoreSell());
 
         //初始化tab的Adapter
         myTabAdapter = new MyTabAdapter(getSupportFragmentManager(),fragments);

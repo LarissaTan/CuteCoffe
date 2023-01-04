@@ -13,7 +13,6 @@
         <activity android:name=".activity.OrderDetailsActivity"/>
         <activity android:name=".activity.OrderActivity" />
         <activity android:name=".activity.PayActivity" />
-        <activity android:name=".activity.PersonalCenterActivity" />
         <activity android:name=".activity.RechargeActivity" />
         <activity android:name=".activity.MyAccountActivity" />
         <activity android:name=".activity.StoreGoodsActivity" />
