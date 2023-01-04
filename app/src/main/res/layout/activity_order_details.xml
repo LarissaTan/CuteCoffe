@@ -13,12 +13,15 @@
         android:id="@+id/tip"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="50dp"
-        android:background="@color/color666"
+        android:layout_marginTop="70dp"
+        android:layout_marginBottom="10dp"
+        android:fontFamily="@font/alegreya"
+        android:textAlignment="center"
         android:text="Order Details"
         android:textColor="@color/black"
         android:textSize="20dp"
-        android:textStyle="bold" />
+        android:textStyle="bold"
+        android:gravity="center_horizontal" />
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/rv_orderDetails"
