@@ -28,13 +28,16 @@
             android:layout_height="wrap_content"
             android:layout_centerVertical="true"
             android:layout_marginLeft="8dp"
+            android:background="@drawable/bg_dialog"
             app:cardCornerRadius="5dp"
+            android:layout_marginRight="10dp"
             app:cardElevation="3dp">
 
             <androidx.appcompat.widget.AppCompatImageView
                 android:id="@+id/iv_goods"
-                android:layout_width="88dp"
-                android:layout_height="88dp"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_margin="15dp"
                 android:scaleType="centerCrop"
                 android:src="@mipmap/goods_bc" />
         </androidx.cardview.widget.CardView>
@@ -48,7 +51,7 @@
             android:layout_toRightOf="@id/iv"
             android:textColor="#333"
             android:textSize="16dp"
-            tools:text="我是名称" />
+            tools:text="xxx" />
 
         <TextView
             android:id="@+id/tvContant"
@@ -58,7 +61,7 @@
             android:layout_marginLeft="6dp"
             android:layout_marginTop="6dp"
             android:layout_toRightOf="@id/iv"
-            android:text="我是菜品的简介\n快来吃快来吃快来吃"
+            android:text="xx"
             android:textColor="#555"
             android:textSize="12dp" />
 
