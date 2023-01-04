@@ -30,7 +30,6 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     public static String username;
     private String password;
     private CheckBox rember;
-    private CheckBox autologin;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -45,7 +44,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         btn_login = (Button)findViewById(R.id.M_login);
         btn_register = (Button)findViewById(R.id.M_register);
         rember = (CheckBox) findViewById(R.id.remenberpw);
-        autologin = (CheckBox)findViewById(R.id.autologin);
+
 
         btn_login.setOnClickListener(this);
         btn_register.setOnClickListener(this);
@@ -64,7 +63,6 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
 
         if (ShareUtils.getAuto_Login().equals("1")) {
-            autologin.setChecked(true);
             if (TextUtils.isEmpty(et_username.getText()) || TextUtils.isEmpty(et_password.getText())) {
                 Toast.makeText(this, "your user name or password is null...", Toast.LENGTH_SHORT).show();
             } else {
@@ -72,8 +70,6 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 username = ShareUtils.getUserName();
                 this.finish();
             }
-        }else {
-            autologin.setChecked(false);
         }
 
 
@@ -89,19 +85,6 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 }
             }
 
-        });
-
-
-        autologin.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
-            @Override
-            public void onCheckedChanged(CompoundButton compoundButton, boolean b) {
-                if (autologin.isChecked()){
-                    //System.out.println("自动登录被选中");
-                    ShareUtils.putAuto_Login("1");
-                }else {
-                    ShareUtils.putAuto_Login("0");
-                }
-            }
         });
     }
 

@@ -91,19 +91,16 @@ public class StoreGoodsActivity extends AppCompatActivity {
     private void initView() {
         toolbar = findViewById(R.id.toolbar);
         tv_bar_title = findViewById(R.id.tv_bar_title);
-        tv_bar_title.setText("商店详情");
+        tv_bar_title.setText("Details");
         tabLayout = findViewById(R.id.home_newsTab);
         home_news_viewPager = findViewById(R.id.home_news_vp);
         iv_pic = findViewById(R.id.iv_store_act);
         tv_storeName = findViewById(R.id.tv_storeName_act);
-        tv_storeScore = findViewById(R.id.tv_store_score_act);
         tv_storeSell = findViewById(R.id.tv_store_sell_act);
-        tv_storeSign = findViewById(R.id.tv_store_sign_act);
         iv_pic.setImageResource(R.mipmap.store_1);
 
 
         tv_storeName.setText(storeBean.getStoreName());
-        tv_storeScore.setText(storeBean.getStoreScore());
         tv_storeSell.setText("Monthly sales："+storeBean.getStoreSell());
 
         //初始化tab的Adapter
