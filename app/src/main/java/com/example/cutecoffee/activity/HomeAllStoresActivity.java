@@ -27,6 +27,7 @@ import com.example.cutecoffee.adapter.AllStoresAdapter;
 import com.example.cutecoffee.bean.StoreBean;
 import com.example.cutecoffee.util.MySQLiteHelper;
 import com.example.cutecoffee.util.ShareUtils;
+import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.android.material.navigation.NavigationView;
 import java.util.ArrayList;
 import java.util.List;
@@ -35,12 +36,11 @@ public class HomeAllStoresActivity extends AppCompatActivity implements View.OnC
 
     private ActionBarDrawerToggle toggle ;
     private DrawerLayout drawerLayout;
-    private NavigationView navigationView;
+    private BottomNavigationView navigationView;
     private Toolbar toolbar;
     private TextView tv_bar_title;
 
     private AllStoresAdapter allStoresAdapter;
-    //private SearchView mySearchView;
     private RecyclerView rv_stores;
     private List<StoreBean> storeBeans;
     private LinearLayout headerView;
@@ -60,19 +60,16 @@ public class HomeAllStoresActivity extends AppCompatActivity implements View.OnC
         ininView();
         hideScrollBar();
         setActionBar();
-        setDrawerToggle();
         setListener();
     }
 
 
     private void ininView() {
-        drawerLayout = findViewById(R.id.drawer_layout);
         navigationView = findViewById(R.id.navigation_view);
         toolbar = findViewById(R.id.toolbar);
         tv_bar_title = findViewById(R.id.tv_bar_title);
         tv_bar_title.setText("Cute Coffee Branches");
 
-        headerView = (LinearLayout) navigationView.getHeaderView(0);
         UserID = MySQLiteHelper.getInstance(getApplicationContext()).GetUserId(MainActivity.username);
 
 
@@ -101,37 +98,28 @@ public class HomeAllStoresActivity extends AppCompatActivity implements View.OnC
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         getSupportActionBar().setDisplayShowTitleEnabled(false);
     }
-    /*设置Drawerlayout的开关,并且和Home图标联动*/
-    private void setDrawerToggle() {
-        toggle = new ActionBarDrawerToggle(this,drawerLayout,toolbar,0,0);
-        drawerLayout.addDrawerListener(toggle);
-        /*同步drawerlayout的状态*/
-        toggle.syncState();
-    }
+
+
 
 
     private void setListener() {
-        navigationView.setNavigationItemSelectedListener(new NavigationView.OnNavigationItemSelectedListener() {
-            @Override
-            public boolean onNavigationItemSelected(@NonNull MenuItem item) {
-                switch (item.getItemId()){
-                    case R.id.single_1:
-                        startActivity(new Intent(HomeAllStoresActivity.this,OrderActivity.class));
-                        break;
-                    case R.id.single_2:
-                        startActivity(new Intent(HomeAllStoresActivity.this, MyAccountActivity.class));
-                        break;
-                    case R.id.single_4:
-                        startActivity(new Intent(HomeAllStoresActivity.this, MainActivity.class));
-                        ShareUtils.putAuto_Login("0");
-                        HomeAllStoresActivity.this.finish();
-                        break;
+        navigationView.setOnNavigationItemSelectedListener(item -> {
 
-                }
-                drawerLayout.closeDrawer(GravityCompat.START);
+            switch (item.getItemId()){
+                case R.id.single_1:
+                    startActivity(new Intent(HomeAllStoresActivity.this,OrderActivity.class));
+                    break;
+                case R.id.single_2:
+                    startActivity(new Intent(HomeAllStoresActivity.this, MyAccountActivity.class));
+                    break;
+                case R.id.single_4:
+                    startActivity(new Intent(HomeAllStoresActivity.this, MainActivity.class));
+                    ShareUtils.putAuto_Login("0");
+                    HomeAllStoresActivity.this.finish();
+                    break;
 
-                return true;
             }
+            return true;
         });
     }
 

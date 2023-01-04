@@ -35,9 +35,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 
-/**
- * 付款界面的activity
- */
+
 public class PayActivity extends AppCompatActivity {
 
     private TextView tv_bar_title;

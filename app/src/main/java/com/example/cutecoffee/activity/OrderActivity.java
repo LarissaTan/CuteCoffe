@@ -20,9 +20,7 @@ import com.example.cutecoffee.util.MySQLiteHelper;
 
 import java.util.List;
 
-/**
- * 订单界面
- */
+
 public class OrderActivity extends AppCompatActivity {
 
 

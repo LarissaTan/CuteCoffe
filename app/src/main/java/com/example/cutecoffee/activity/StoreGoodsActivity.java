@@ -23,9 +23,6 @@ import java.util.ArrayList;
 import java.util.List;
 
 
-/**
- * 点击商家后进入的商家商品界面
- */
 public class StoreGoodsActivity extends AppCompatActivity {
 
     private TabLayout tabLayout = null;
@@ -56,17 +53,14 @@ public class StoreGoodsActivity extends AppCompatActivity {
         setActionBar();
     }
 
-    /*设置ActionBar*/
     private void setActionBar() {
         setSupportActionBar(toolbar);
-        /*显示Home图标*/
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
-        //设置不显示项目名称
         getSupportActionBar().setDisplayShowTitleEnabled(false);
     }
 
     @Override
-    //为toolbar设置返回按钮
+    //toolbar set return button
     public boolean onOptionsItemSelected(@NonNull MenuItem item) {
         if(item.getItemId() == android.R.id.home){
             finish();

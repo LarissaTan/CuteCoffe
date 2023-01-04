@@ -21,9 +21,6 @@ import com.example.cutecoffee.util.MySQLiteHelper;
 import com.example.cutecoffee.util.ToastUtil;
 
 
-/**
- * 充值界面的activity
- */
 public class RechargeActivity extends AppCompatActivity {
 
     private TextView tv_bar_title;

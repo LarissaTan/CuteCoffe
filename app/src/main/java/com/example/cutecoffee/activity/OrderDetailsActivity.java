@@ -25,9 +25,6 @@ import java.math.BigDecimal;
 import java.util.List;
 
 
-/**
- * 订单详情界面activity
- */
 public class OrderDetailsActivity extends AppCompatActivity {
 
     private OrderBean orderBean ;
