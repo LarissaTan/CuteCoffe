@@ -13,7 +13,6 @@ import android.widget.TextView;
 
 import com.example.cutecoffee.MainActivity;
 import com.example.cutecoffee.R;
-import com.example.cutecoffee.adapter.AllStoresAdapter;
 import com.example.cutecoffee.adapter.OrderAdapter;
 import com.example.cutecoffee.bean.OrderBean;
 import com.example.cutecoffee.util.MySQLiteHelper;

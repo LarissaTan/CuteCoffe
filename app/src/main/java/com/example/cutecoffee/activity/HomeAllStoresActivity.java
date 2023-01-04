@@ -2,35 +2,17 @@ package com.example.cutecoffee.activity;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.os.Handler;
-import android.os.Message;
 import android.view.KeyEvent;
-import android.view.MenuItem;
 import android.view.View;
-import android.widget.ImageView;
-import android.widget.LinearLayout;
-import android.widget.TextView;
 import android.widget.Toast;
 
-import androidx.annotation.NonNull;
-import androidx.appcompat.app.ActionBarDrawerToggle;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.appcompat.widget.Toolbar;
-import androidx.core.view.GravityCompat;
-import androidx.drawerlayout.widget.DrawerLayout;
-import androidx.recyclerview.widget.DefaultItemAnimator;
-import androidx.recyclerview.widget.LinearLayoutManager;
-import androidx.recyclerview.widget.RecyclerView;
+
 import com.example.cutecoffee.MainActivity;
 import com.example.cutecoffee.R;
-import com.example.cutecoffee.adapter.AllStoresAdapter;
-import com.example.cutecoffee.bean.StoreBean;
 import com.example.cutecoffee.util.MySQLiteHelper;
 import com.example.cutecoffee.util.ShareUtils;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
-import com.google.android.material.navigation.NavigationView;
-import java.util.ArrayList;
-import java.util.List;
 
 public class HomeAllStoresActivity extends AppCompatActivity implements View.OnClickListener {
 

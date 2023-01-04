@@ -32,10 +32,6 @@ public class StoreBean implements Serializable {
         this.ID = ID;
     }
 
-    public String getIv_store_pic() {
-        return iv_store_pic;
-    }
-
     public void setIv_store_pic(String iv_store_pic) {
         this.iv_store_pic = iv_store_pic;
     }
