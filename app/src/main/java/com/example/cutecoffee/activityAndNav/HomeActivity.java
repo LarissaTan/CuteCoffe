@@ -21,10 +21,10 @@ import com.google.android.material.bottomnavigation.BottomNavigationView;
 public class HomeActivity extends AppCompatActivity implements View.OnClickListener {
 
     private BottomNavigationView navigationView;
-    private FrameLayout nav_frag;
     private int UserID ;
     private OrderFragment orderFragment = new OrderFragment();
     private HomeFragment homeFragment = new HomeFragment();
+    private AccountFragment accountFragment = new AccountFragment();
 
 
     @Override
@@ -59,8 +59,9 @@ public class HomeActivity extends AppCompatActivity implements View.OnClickListe
                     replacementFragment(orderFragment);
                     break;
                 case R.id.single_2:
+                    replacementFragment(accountFragment);
                     //startActivity(new Intent(HomeAllStoresActivity.this, MyAccountActivity.class));
-                    startActivity(new Intent(HomeActivity.this,StoreGoodsActivity.class));
+                    //startActivity(new Intent(HomeActivity.this,StoreGoodsActivity.class));
                     break;
                 case R.id.single_4:
                     startActivity(new Intent(HomeActivity.this, MainActivity.class));

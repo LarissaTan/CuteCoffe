@@ -14,7 +14,7 @@
         <activity android:name=".activityAndNav.OrderFragment" />
         <activity android:name=".activityAndNav.PayActivity" />
         <activity android:name=".activityAndNav.RechargeActivity" />
-        <activity android:name=".activityAndNav.MyAccountActivity" />
+        <activity android:name=".activityAndNav.AccountFragment" />
         <activity android:name=".activityAndNav.StoreGoodsActivity" />
         <activity android:name=".activityAndNav.RegisterActivity" />
         <activity android:name=".activityAndNav.HomeActivity" />
