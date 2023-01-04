@@ -391,13 +391,13 @@ public class StoreGoodsFragment extends Fragment {
 
     public void setShoppingCarHaveGoods(){
         iv_car.setImageResource(R.drawable.shoppingcar_full_64);
-        tv_car.setText("去结算");
+        tv_car.setText("Pay");
         tv_total.setVisibility(View.VISIBLE);
     }
 
     public static void setShoppingCarNotHaveGoods(){
         iv_car.setImageResource(R.drawable.shoppingcar_null_64);
-        tv_car.setText("暂无商品");
+        tv_car.setText("Empty");
         tv_total.setVisibility(View.INVISIBLE);
     }
 

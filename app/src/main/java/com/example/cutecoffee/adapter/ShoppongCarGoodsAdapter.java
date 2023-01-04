@@ -119,7 +119,6 @@ public class ShoppongCarGoodsAdapter  extends  RecyclerView.Adapter<ShoppongCarG
                 public void onClick(View view) {
                     data.get(getAdapterPosition()).setNumber(data.get(getAdapterPosition()).getNumber()+1);
                     //int p = StoreGoodsFragment.goodsArrayBean.itemsRight.indexOf(data.get(getAdapterPosition()));
-                    //Log.e("获取的位置",p+"");
                     //StoreGoodsFragment.goodsArrayBean.itemsRight.get(p).setNumber(StoreGoodsFragment.goodsArrayBean.itemsRight.get(p).getNumber()+1);
                     StoreGoodsFragment.handler.sendEmptyMessage(1);
                     notifyItemChanged(getAdapterPosition());
@@ -134,9 +133,6 @@ public class ShoppongCarGoodsAdapter  extends  RecyclerView.Adapter<ShoppongCarG
                     //发送信息，通知商品列表刷新
                     StoreGoodsFragment.handler.sendEmptyMessage(1);
                     refreshTotal();
-                    /**
-                     * 判断是否已经减到了0
-                     */
                     if (data.get(getAdapterPosition()).getNumber() == 0){
                         data.remove(getAdapterPosition());
                         notifyItemRemoved(getAdapterPosition());
@@ -148,7 +144,7 @@ public class ShoppongCarGoodsAdapter  extends  RecyclerView.Adapter<ShoppongCarG
                     }
                     //如果数据已为空，通知handler刷新
                     if (data.size() == 0){
-                        ToastUtil.showShort("购物车已空");
+                        ToastUtil.showShort("Cart is empty");
                         MyDialog.handler.sendEmptyMessage(1);
                     }
                 }
@@ -156,7 +152,6 @@ public class ShoppongCarGoodsAdapter  extends  RecyclerView.Adapter<ShoppongCarG
         }
     }
 
-    //刷新购物车底部总价格
     private void refreshTotal(){
         total = 0;
         for (int i= 0;i<data.size();i++){
@@ -168,7 +163,6 @@ public class ShoppongCarGoodsAdapter  extends  RecyclerView.Adapter<ShoppongCarG
             one = new BigDecimal("1");
             a = result.divide(one,2,BigDecimal.ROUND_HALF_UP).doubleValue();//保留2位数
             total = a ;
-            //Log.e("total",total+"");
 
         }
         MyDialog.tv_total.setText("￥ "+ total);

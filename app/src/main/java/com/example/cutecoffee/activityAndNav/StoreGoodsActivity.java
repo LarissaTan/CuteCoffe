@@ -16,7 +16,6 @@ import com.example.cutecoffee.adapter.MyTabAdapter;
 import com.example.cutecoffee.bean.StoreBean;
 import com.example.cutecoffee.fragment.StoreCommentFragment;
 import com.example.cutecoffee.fragment.StoreGoodsFragment;
-import com.example.cutecoffee.fragment.StoreIntroFragment;
 import com.example.cutecoffee.util.MySQLiteHelper;
 import com.google.android.material.tabs.TabLayout;
 import java.util.ArrayList;
@@ -30,7 +29,6 @@ public class StoreGoodsActivity extends AppCompatActivity {
     private ViewPager home_news_viewPager;
     private StoreGoodsFragment storeGoodsFragment;
     private StoreCommentFragment storeCommentFragment;
-    private StoreIntroFragment storeIntroFragment;
     private List<Fragment> fragments = new ArrayList<>();
 
     private TextView tv_bar_title;
@@ -73,10 +71,8 @@ public class StoreGoodsActivity extends AppCompatActivity {
         storeBean = MySQLiteHelper.getInstance(getApplicationContext()).queryStoreBeanFromStoreID(storeID);
         storeGoodsFragment = new StoreGoodsFragment(storeID);
         storeCommentFragment = new StoreCommentFragment();
-        storeIntroFragment = new StoreIntroFragment(storeBean);
         fragments.add(storeGoodsFragment);
         fragments.add(storeCommentFragment);
-        fragments.add(storeIntroFragment);
     }
 
 

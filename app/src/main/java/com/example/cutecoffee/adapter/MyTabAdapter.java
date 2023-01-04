@@ -15,7 +15,7 @@ import java.util.List;
 public class MyTabAdapter extends FragmentPagerAdapter {
 
     private List<Fragment> fragments;
-    String[] Title = new String[]{"点餐","讨论","商家"};
+    String[] Title = new String[]{"Order","Reviews"};
 
     public MyTabAdapter(@NonNull FragmentManager fm, List<Fragment> fragments) {
         super(fm);
@@ -30,7 +30,7 @@ public class MyTabAdapter extends FragmentPagerAdapter {
 
     @Override
     public int getCount() {
-        return 3;
+        return 2;
     }
 
     /**

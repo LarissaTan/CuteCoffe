@@ -10,7 +10,6 @@
         android:layout_height="0dp"
         android:layout_weight="1"
         android:background="#00000000"/>
-    <!--商品菜单-->
     <RelativeLayout
         android:background="@color/white"
         android:id="@+id/v_anim"
@@ -25,7 +24,7 @@
             <TextView
                 android:layout_centerVertical="true"
                 android:layout_marginLeft="8dp"
-                android:text="已选商品"
+                android:text="Selecting"
                 android:textColor="@color/black"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"/>
@@ -35,7 +34,7 @@
                 android:layout_marginRight="8dp"
                 android:layout_alignParentRight="true"
                 android:layout_centerVertical="true"
-                android:text="清空"
+                android:text="Clear"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"/>
 
@@ -85,14 +84,14 @@
             android:textColor="@color/black"
             android:textStyle="bold"
             android:gravity="center"
-            android:text="暂无商品"
+            android:text="Empty"
             android:background="@drawable/textview_shape"
             android:layout_width="100dp"
             android:layout_height="40dp"/>
 
         <TextView
             android:id="@+id/tv_total_dialog"
-            android:text="￥50"
+            android:text="$50"
             android:textColor="@color/black"
             android:textSize="20dp"
             android:textStyle="bold"

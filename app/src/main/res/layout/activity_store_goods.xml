@@ -11,7 +11,7 @@
     <include layout="@layout/mytoolbar"/>
 
     <RelativeLayout
-        android:background="#B13628"
+        android:background="#FDCB6B"
         android:layout_width="match_parent"
         android:layout_height="120dp"
         >

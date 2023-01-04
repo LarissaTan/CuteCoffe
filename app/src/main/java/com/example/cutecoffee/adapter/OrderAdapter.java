@@ -53,7 +53,7 @@ public class OrderAdapter  extends RecyclerView.Adapter<OrderAdapter.ViewHolder>
             super(itemView);
             tv_time = itemView.findViewById(R.id.tv_orderTime);
 
-            //设置点击事件点击后跳转订单详情界面
+
             tv_time.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
