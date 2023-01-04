@@ -34,73 +34,30 @@ import java.util.List;
 
 public class HomeAllStoresActivity extends AppCompatActivity implements View.OnClickListener {
 
-    private ActionBarDrawerToggle toggle ;
-    private DrawerLayout drawerLayout;
     private BottomNavigationView navigationView;
-    private Toolbar toolbar;
-    private TextView tv_bar_title;
-
-    private AllStoresAdapter allStoresAdapter;
-    private RecyclerView rv_stores;
-    private List<StoreBean> storeBeans;
-    private LinearLayout headerView;
     private int UserID ;
 
-    private void initData(){
-        storeBeans = new ArrayList<>();
-        storeBeans = MySQLiteHelper.getInstance(getApplicationContext()).queryAllStores();
-    }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home_all_stores);
 
-        initData();
         ininView();
         hideScrollBar();
-        setActionBar();
         setListener();
     }
 
 
     private void ininView() {
         navigationView = findViewById(R.id.navigation_view);
-        toolbar = findViewById(R.id.toolbar);
-        tv_bar_title = findViewById(R.id.tv_bar_title);
-        tv_bar_title.setText("Cute Coffee Branches");
-
         UserID = MySQLiteHelper.getInstance(getApplicationContext()).GetUserId(MainActivity.username);
-
-
-        rv_stores = findViewById(R.id.rv_stores);
-        allStoresAdapter = new AllStoresAdapter(storeBeans);
-        rv_stores.setItemAnimator(new DefaultItemAnimator());
-        rv_stores.setLayoutManager(new LinearLayoutManager(this));
-        rv_stores.setAdapter(allStoresAdapter);
-
-        allStoresAdapter.setOnItemClickListener(new AllStoresAdapter.OnItemClickListener() {
-            @Override
-            public void onClick(View v, int position, StoreBean storeBean) {
-                startActivity(new Intent(HomeAllStoresActivity.this,StoreGoodsActivity.class).putExtra("storeID",storeBean.getID()));
-            }
-        });
 
     }
 
     private void hideScrollBar() {
         navigationView.getChildAt(0).setVerticalScrollBarEnabled(false);
     }
-
-    /*set Action Bar*/
-    private void setActionBar() {
-        setSupportActionBar(toolbar);
-        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
-        getSupportActionBar().setDisplayShowTitleEnabled(false);
-    }
-
-
-
 
     private void setListener() {
         navigationView.setOnNavigationItemSelectedListener(item -> {
@@ -110,7 +67,8 @@ public class HomeAllStoresActivity extends AppCompatActivity implements View.OnC
                     startActivity(new Intent(HomeAllStoresActivity.this,OrderActivity.class));
                     break;
                 case R.id.single_2:
-                    startActivity(new Intent(HomeAllStoresActivity.this, MyAccountActivity.class));
+                    //startActivity(new Intent(HomeAllStoresActivity.this, MyAccountActivity.class));
+                    startActivity(new Intent(HomeAllStoresActivity.this,StoreGoodsActivity.class));
                     break;
                 case R.id.single_4:
                     startActivity(new Intent(HomeAllStoresActivity.this, MainActivity.class));

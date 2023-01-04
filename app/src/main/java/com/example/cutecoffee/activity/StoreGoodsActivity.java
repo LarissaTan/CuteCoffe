@@ -39,15 +39,13 @@ public class StoreGoodsActivity extends AppCompatActivity {
     private StoreBean storeBean;
     private ImageView iv_pic;
     private TextView tv_storeName;
-    private TextView tv_storeScore;
     private TextView tv_storeSell;
-    private TextView tv_storeSign;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_store_goods);
-        storeID = getIntent().getStringExtra("storeID");
+        storeID = "0";
         initData();
         initView();
         setActionBar();
