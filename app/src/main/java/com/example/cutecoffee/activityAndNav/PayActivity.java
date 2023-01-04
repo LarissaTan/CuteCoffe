@@ -95,7 +95,7 @@ public class PayActivity extends AppCompatActivity {
         tv_submitOrder = findViewById(R.id.tv_submitOrder);
         toolbar = findViewById(R.id.toolbar);
         tv_bar_title = findViewById(R.id.tv_bar_title);
-        tv_bar_title.setText("提交订单");
+        tv_bar_title.setText("Submit");
 
         //初始化recyclerView
         rv_pay.setItemAnimator(null);
@@ -125,16 +125,16 @@ public class PayActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 //ToastUtil.showShort("总金额"+total);
-                dialog = new AlertDialog.Builder(PayActivity.this).setTitle("是否确认购买？")
-                        .setMessage("总金额：" + total)
+                dialog = new AlertDialog.Builder(PayActivity.this).setTitle("Are you sure to pay？")
+                        .setMessage("Total：" + total)
                         .setIcon(R.mipmap.ic_shop)
-                        .setPositiveButton("确定", new DialogInterface.OnClickListener() {
+                        .setPositiveButton("Confirm", new DialogInterface.OnClickListener() {
                             @Override
                             public void onClick(DialogInterface dialogInterface, int i) {
                                 doInsertOrder();
                             }
                         })
-                        .setNegativeButton("取消", null)
+                        .setNegativeButton("Cancel", null)
                         .create();
                 dialog.show();
 
@@ -145,14 +145,11 @@ public class PayActivity extends AppCompatActivity {
     }
 
 
-    /**
-     * 进行插入订单的判定和操作
-     */
     private void doInsertOrder(){
         accountMoney = MySQLiteHelper.getInstance(PayActivity.this).getUserMoneyFromUserName(MainActivity.username);
         //判断账户余额是否足够
         if (total > accountMoney){
-            ToastUtil.showShort("账户余额不足，请先充值");
+            ToastUtil.showShort("Your balance is not enough. Please charge first.");
             dialog.dismiss();
         }else {
             //解决double精度丢失问题
@@ -170,8 +167,7 @@ public class PayActivity extends AppCompatActivity {
             //Log.e("order",orderBean.toString());
             //Log.e("时间",DateUtill.getCurrentTime());
             MySQLiteHelper.getInstance(PayActivity.this).insertOrderInfo(orderBean);
-            ToastUtil.showShort("下单成功!");
-            //通过handler通知刷新购物车界面
+            ToastUtil.showShort("We have receive that order!");
             MyDialog.handler.sendEmptyMessage(2);
             PayActivity.this.finish();
         }

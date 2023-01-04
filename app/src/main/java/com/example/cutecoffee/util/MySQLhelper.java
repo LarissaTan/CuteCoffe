@@ -20,7 +20,7 @@ public class MySQLhelper extends SQLiteOpenHelper {
 
     @Override
     public void onCreate(SQLiteDatabase db) {
-        db.execSQL("CREATE TABLE userInfo(_id INTEGER PRIMARY KEY AUTOINCREMENT ,userName VERVHAR(20),password VERVHAR(20),nickName VERVHAR(20),phoneNumb VERVHAR(20),money REAL)");
+        db.execSQL("CREATE TABLE userInfo(_id INTEGER PRIMARY KEY AUTOINCREMENT ,userName VERVHAR(20),password VERVHAR(20),phoneNumb VERVHAR(20),money REAL)");
         db.execSQL("CREATE TABLE storeInfo(_id INTEGER PRIMARY KEY autoincrement ,ID VERVHAR(20),picNumb VERVHAR(20),storeName VERVHAR(20),storeScore VERVHAR(20),storeSell VERVHAR(20) ,storeSign VERVHAR(20) ,storeIntro text )");
         db.execSQL("CREATE TABLE goodsInfo(_id INTEGER PRIMARY KEY autoincrement ,ID VERVHAR(20),goodsJson text)");
         db.execSQL("CREATE TABLE messagesInfo(_id INTEGER PRIMARY KEY autoincrement ,ID INTEGER,img_id VERVHAR(20),message text,userName VERVHAR(20),time VERVHAR(20))");

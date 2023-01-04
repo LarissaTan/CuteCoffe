@@ -33,7 +33,7 @@ public class MySQLiteHelper {
 
     //将注册的用户名密码插入到表中
     public void insertUserinfo(Userinfo userinfo) {
-        db.execSQL("insert into userInfo(userName,password,nickName,phoneNumb,schoolName,apartmentNumb,money) values(?,?,?,?)", new Object[]{userinfo.getUserName(), userinfo.getPassword(),userinfo.getPhoneNumb(),0});
+        db.execSQL("insert into userInfo(userName,password,phoneNumb,money) values(?,?,?,?)", new Object[]{userinfo.getUserName(), userinfo.getPassword(),userinfo.getPhoneNumb(),0});
         //Log.e("插入语句:", "插入已执行，插入成功");
     }
 

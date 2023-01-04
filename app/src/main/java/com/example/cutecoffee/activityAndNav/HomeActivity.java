@@ -88,7 +88,7 @@ public class HomeActivity extends AppCompatActivity implements View.OnClickListe
     public boolean onKeyDown(int keyCode, KeyEvent event) {
         if (keyCode == KeyEvent.KEYCODE_BACK && event.getAction() == KeyEvent.ACTION_DOWN){
             if ((System.currentTimeMillis() - exitTime) > 2000 ){
-                Toast.makeText(HomeActivity.this,"再按一次退出商城",
+                Toast.makeText(HomeActivity.this,"Click one more time to exist",
                         Toast.LENGTH_SHORT).show();
                 exitTime = System.currentTimeMillis();
             }else {
