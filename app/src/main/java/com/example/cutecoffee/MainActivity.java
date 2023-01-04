@@ -12,14 +12,10 @@ import android.widget.CompoundButton;
 import android.widget.EditText;
 import android.widget.Toast;
 
-import com.example.cutecoffee.activity.HomeAllStoresActivity;
-import com.example.cutecoffee.activity.RegisterActivity;
-import com.example.cutecoffee.bean.Userinfo;
+import com.example.cutecoffee.activityAndNav.HomeActivity;
+import com.example.cutecoffee.activityAndNav.RegisterActivity;
 import com.example.cutecoffee.util.MySQLiteHelper;
 import com.example.cutecoffee.util.ShareUtils;
-
-
-import java.util.List;
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
 
@@ -66,7 +62,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             if (TextUtils.isEmpty(et_username.getText()) || TextUtils.isEmpty(et_password.getText())) {
                 Toast.makeText(this, "your user name or password is null...", Toast.LENGTH_SHORT).show();
             } else {
-                startActivity(new Intent(this, HomeAllStoresActivity.class));
+                startActivity(new Intent(this, HomeActivity.class));
                 username = ShareUtils.getUserName();
                 this.finish();
             }
@@ -105,7 +101,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                         ShareUtils.putPassword(password);
                     }
                     Toast.makeText(MainActivity.this, "Login successfully", Toast.LENGTH_SHORT).show();
-                    startActivity(new Intent(this, HomeAllStoresActivity.class));
+                    startActivity(new Intent(this, HomeActivity.class));
                     MainActivity.this.finish();
                 }else {
                     Toast.makeText(MainActivity.this, "Failed to login", Toast.LENGTH_SHORT).show();

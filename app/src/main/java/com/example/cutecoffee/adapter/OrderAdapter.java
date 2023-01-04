@@ -9,7 +9,7 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.cutecoffee.R;
-import com.example.cutecoffee.activity.OrderDetailsActivity;
+import com.example.cutecoffee.activityAndNav.OrderDetailsActivity;
 import com.example.cutecoffee.bean.OrderBean;
 import com.example.cutecoffee.util.AppContext;
 import java.util.List;

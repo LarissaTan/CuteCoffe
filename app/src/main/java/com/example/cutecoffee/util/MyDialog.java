@@ -1,12 +1,9 @@
 package com.example.cutecoffee.util;
 
-import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
-import android.os.Bundle;
 import android.os.Handler;
 import android.os.Message;
-import android.os.Parcelable;
 import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -19,13 +16,11 @@ import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
-import androidx.recyclerview.widget.DefaultItemAnimator;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
-import androidx.recyclerview.widget.SimpleItemAnimator;
 
 import com.example.cutecoffee.R;
-import com.example.cutecoffee.activity.PayActivity;
+import com.example.cutecoffee.activityAndNav.PayActivity;
 import com.example.cutecoffee.adapter.ShoppongCarGoodsAdapter;
 import com.example.cutecoffee.bean.GoodsArrayBean;
 import com.example.cutecoffee.fragment.StoreGoodsFragment;

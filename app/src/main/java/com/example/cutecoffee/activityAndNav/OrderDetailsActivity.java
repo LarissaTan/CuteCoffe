@@ -1,4 +1,4 @@
-package com.example.cutecoffee.activity;
+package com.example.cutecoffee.activityAndNav;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
@@ -11,12 +11,10 @@ import android.view.MenuItem;
 import android.widget.TextView;
 
 import com.example.cutecoffee.R;
-import com.example.cutecoffee.adapter.OrderAdapter;
 import com.example.cutecoffee.adapter.PayRVAdapter;
 import com.example.cutecoffee.bean.GoodsArrayBean;
 import com.example.cutecoffee.bean.OrderBean;
 import com.example.cutecoffee.util.AppContext;
-import com.example.cutecoffee.util.MySQLiteHelper;
 import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
 
@@ -56,9 +54,7 @@ public class OrderDetailsActivity extends AppCompatActivity {
     /*设置ActionBar*/
     private void setActionBar() {
         setSupportActionBar(toolbar);
-        /*显示Home图标*/
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
-        //设置不显示项目名称
         getSupportActionBar().setDisplayShowTitleEnabled(false);
     }
 
@@ -85,12 +81,11 @@ public class OrderDetailsActivity extends AppCompatActivity {
     private void initView() {
         toolbar = findViewById(R.id.toolbar);
         tv_bar_title = findViewById(R.id.tv_bar_title);
-        tv_bar_title.setText("订单详情");
+        tv_bar_title.setText("Order Details");
         tv_total = findViewById(R.id.tv_order_total);
         tv_orderDetails_time = findViewById(R.id.tv_orderDetails_time);
         tv_orderDetails_time.setText(orderBean.getTime());
         rv_orderDetails = findViewById(R.id.rv_orderDetails);
-        //初始化recyclerView
         payRVAdapter = new PayRVAdapter(goodsData);
         rv_orderDetails.setLayoutManager(new LinearLayoutManager(AppContext.getInstance()));
         rv_orderDetails.setAdapter(payRVAdapter);
@@ -100,7 +95,6 @@ public class OrderDetailsActivity extends AppCompatActivity {
          * 循环数据集，获取价格总数
          */
         for (int i= 0;i<goodsData.size();i++){
-            //解决double类型计算丢失精度问题
             b1 = new BigDecimal(goodsData.get(i).getPrice().trim());
             b2 = new BigDecimal(goodsData.get(i).getNumber());
             b3 = new BigDecimal(total);
@@ -112,6 +106,6 @@ public class OrderDetailsActivity extends AppCompatActivity {
             //Log.e("total",total+"");
         }
 
-        tv_total.setText("￥"+ total);
+        tv_total.setText("$"+ total);
     }
 }

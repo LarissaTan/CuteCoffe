@@ -1,4 +1,4 @@
-package com.example.cutecoffee.activity;
+package com.example.cutecoffee.activityAndNav;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AlertDialog;
@@ -10,7 +10,6 @@ import androidx.recyclerview.widget.RecyclerView;
 import android.app.Dialog;
 import android.content.DialogInterface;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.TextView;
@@ -18,10 +17,8 @@ import android.widget.TextView;
 import com.example.cutecoffee.MainActivity;
 import com.example.cutecoffee.R;
 import com.example.cutecoffee.adapter.PayRVAdapter;
-import com.example.cutecoffee.adapter.ShoppongCarGoodsAdapter;
 import com.example.cutecoffee.bean.GoodsArrayBean;
 import com.example.cutecoffee.bean.OrderBean;
-import com.example.cutecoffee.fragment.StoreGoodsFragment;
 import com.example.cutecoffee.util.AppContext;
 import com.example.cutecoffee.util.DateUtill;
 import com.example.cutecoffee.util.MyDialog;
@@ -30,7 +27,6 @@ import com.example.cutecoffee.util.ToastUtil;
 import com.google.gson.Gson;
 
 import java.math.BigDecimal;
-import java.security.spec.RSAOtherPrimeInfo;
 import java.util.ArrayList;
 import java.util.List;
 

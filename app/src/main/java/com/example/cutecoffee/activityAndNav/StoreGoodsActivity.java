@@ -1,4 +1,4 @@
-package com.example.cutecoffee.activity;
+package com.example.cutecoffee.activityAndNav;
 
 import android.os.Bundle;
 import android.view.MenuItem;

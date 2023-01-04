@@ -1,12 +1,16 @@
-package com.example.cutecoffee.activity;
+package com.example.cutecoffee.activityAndNav;
 
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.KeyEvent;
 import android.view.View;
+import android.widget.FrameLayout;
 import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentManager;
+import androidx.fragment.app.FragmentTransaction;
 
 import com.example.cutecoffee.MainActivity;
 import com.example.cutecoffee.R;
@@ -14,16 +18,18 @@ import com.example.cutecoffee.util.MySQLiteHelper;
 import com.example.cutecoffee.util.ShareUtils;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
-public class HomeAllStoresActivity extends AppCompatActivity implements View.OnClickListener {
+public class HomeActivity extends AppCompatActivity implements View.OnClickListener {
 
     private BottomNavigationView navigationView;
+    private FrameLayout nav_frag;
     private int UserID ;
+    private OrderFragment orderFragment = new OrderFragment();
 
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_home_all_stores);
+        setContentView(R.layout.activity_home);
 
         ininView();
         hideScrollBar();
@@ -34,7 +40,7 @@ public class HomeAllStoresActivity extends AppCompatActivity implements View.OnC
     private void ininView() {
         navigationView = findViewById(R.id.navigation_view);
         UserID = MySQLiteHelper.getInstance(getApplicationContext()).GetUserId(MainActivity.username);
-
+        replacementFragment(orderFragment);
     }
 
     private void hideScrollBar() {
@@ -46,16 +52,16 @@ public class HomeAllStoresActivity extends AppCompatActivity implements View.OnC
 
             switch (item.getItemId()){
                 case R.id.single_1:
-                    startActivity(new Intent(HomeAllStoresActivity.this,OrderActivity.class));
+                    replacementFragment(orderFragment);
                     break;
                 case R.id.single_2:
                     //startActivity(new Intent(HomeAllStoresActivity.this, MyAccountActivity.class));
-                    startActivity(new Intent(HomeAllStoresActivity.this,StoreGoodsActivity.class));
+                    startActivity(new Intent(HomeActivity.this,StoreGoodsActivity.class));
                     break;
                 case R.id.single_4:
-                    startActivity(new Intent(HomeAllStoresActivity.this, MainActivity.class));
+                    startActivity(new Intent(HomeActivity.this, MainActivity.class));
                     ShareUtils.putAuto_Login("0");
-                    HomeAllStoresActivity.this.finish();
+                    HomeActivity.this.finish();
                     break;
 
             }
@@ -79,16 +85,23 @@ public class HomeAllStoresActivity extends AppCompatActivity implements View.OnC
     public boolean onKeyDown(int keyCode, KeyEvent event) {
         if (keyCode == KeyEvent.KEYCODE_BACK && event.getAction() == KeyEvent.ACTION_DOWN){
             if ((System.currentTimeMillis() - exitTime) > 2000 ){
-                Toast.makeText(HomeAllStoresActivity.this,"再按一次退出商城",
+                Toast.makeText(HomeActivity.this,"再按一次退出商城",
                         Toast.LENGTH_SHORT).show();
                 exitTime = System.currentTimeMillis();
             }else {
-                HomeAllStoresActivity.this.finish();
+                HomeActivity.this.finish();
                 System.exit(0);
             }
             return true;
         }
         return super.onKeyDown(keyCode,event);
+    }
+
+    private void replacementFragment(Fragment fragment){
+        FragmentManager fragmentManager = getSupportFragmentManager();
+        FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
+        fragmentTransaction.replace(R.id.nav_frag,fragment);
+        fragmentTransaction.commit();
     }
 
 }

@@ -10,14 +10,14 @@
         android:roundIcon="@mipmap/ic_shop"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".activity.OrderDetailsActivity"/>
-        <activity android:name=".activity.OrderActivity" />
-        <activity android:name=".activity.PayActivity" />
-        <activity android:name=".activity.RechargeActivity" />
-        <activity android:name=".activity.MyAccountActivity" />
-        <activity android:name=".activity.StoreGoodsActivity" />
-        <activity android:name=".activity.RegisterActivity" />
-        <activity android:name=".activity.HomeAllStoresActivity" />
+        <activity android:name=".activityAndNav.OrderDetailsActivity"/>
+        <activity android:name=".activityAndNav.OrderFragment" />
+        <activity android:name=".activityAndNav.PayActivity" />
+        <activity android:name=".activityAndNav.RechargeActivity" />
+        <activity android:name=".activityAndNav.MyAccountActivity" />
+        <activity android:name=".activityAndNav.StoreGoodsActivity" />
+        <activity android:name=".activityAndNav.RegisterActivity" />
+        <activity android:name=".activityAndNav.HomeActivity" />
         <activity android:name=".MainActivity"
             android:exported="true">
             <intent-filter>
