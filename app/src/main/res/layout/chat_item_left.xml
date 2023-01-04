@@ -13,7 +13,7 @@
     <TextView
         android:id="@+id/tv_left_userName"
         android:layout_below="@id/iv_icon"
-        android:text="我是用户名"
+        android:text="name"
         android:textColor="@color/black"
         android:gravity="center"
         android:textSize="14dp"
@@ -38,7 +38,7 @@
         android:layout_below="@+id/tv_left_time"
         android:layout_toRightOf="@+id/tv_left_userName"
         android:padding="8dp"
-        android:text="我是信息内容！！！"
+        android:text="xxxxx"
         android:textColor="@color/black"
         android:textSize="18dp" />
 

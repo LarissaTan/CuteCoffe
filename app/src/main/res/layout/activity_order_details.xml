@@ -15,7 +15,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="50dp"
         android:background="@color/color666"
-        android:text="订单详细信息"
+        android:text="Order Details"
         android:textColor="@color/black"
         android:textSize="20dp"
         android:textStyle="bold" />
@@ -48,12 +48,12 @@
 
 
         <TextView
-            android:text="总金额: "
-            android:textSize="25sp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
             android:layout_centerInParent="true"
             android:layout_toLeftOf="@+id/tv_order_total"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"/>
+            android:text="Total: "
+            android:textSize="25sp" />
 
         <TextView
             android:id="@+id/tv_order_total"

@@ -17,7 +17,7 @@
         android:textColor="@color/black"
         android:background="@color/color666"
         android:textSize="20dp"
-        android:text="您的订单信息如下"
+        android:text="Here comes your order: "
         android:layout_width="match_parent"
         android:layout_height="wrap_content"/>
 

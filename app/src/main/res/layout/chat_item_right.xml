@@ -13,12 +13,12 @@
         android:layout_below="@id/tv_right_time"
         android:layout_toLeftOf="@+id/tv_right_userName"
         android:padding="8dp"
-        android:text="把那些贩毒的关到小黑屋，枪毙五十次，快去" />
+        android:text="xxxxx" />
 
     <TextView
         android:id="@+id/tv_right_userName"
         android:layout_below="@id/iv_chat_imagr_right"
-        android:text="我是用户名"
+        android:text="name"
         android:layout_alignParentRight="true"
         android:textColor="@color/black"
         android:textSize="14dp"

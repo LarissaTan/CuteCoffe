@@ -19,7 +19,7 @@
         <TextView
             android:id="@+id/tv_storeName_act"
             android:layout_marginTop="20dp"
-            android:text="我是店家名称"
+            android:text="branch name"
             android:textStyle="bold"
             android:textSize="20dp"
             android:layout_marginLeft="8dp"
@@ -37,37 +37,14 @@
             android:layout_height="20dp">
 
             <TextView
-                android:id="@+id/tv_store_score_act"
-                android:textStyle="bold"
-                android:textColor="#FF2256"
-                android:gravity="center"
-                android:text="5.0分"
-                android:layout_width="50dp"
-                android:layout_height="match_parent"/>
-
-            <TextView
                 android:id="@+id/tv_store_sell_act"
-                android:layout_marginLeft="20dp"
                 android:gravity="center"
                 android:layout_gravity="center_vertical"
-                android:text="月售457"
+                android:text="xxxx"
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"/>
 
         </LinearLayout>
-
-        <TextView
-            android:layout_below="@+id/ll"
-            android:id="@+id/tv_store_sign_act"
-            android:layout_marginTop="3dp"
-            android:layout_marginLeft="8dp"
-            android:background="@drawable/store_intro_shape"
-            android:textColor="#B83F3F"
-            android:textStyle="bold"
-            android:text="棒棒哒，又快又好吃"
-            android:layout_width="wrap_content"
-            android:layout_height="20dp"/>
-
 
 
         <ImageView

@@ -27,7 +27,7 @@
         android:id="@+id/btn_doRecharge"
         android:textColor="@color/black"
         android:textSize="30dp"
-        android:text="充值"
+        android:text="Charge"
         android:layout_below="@+id/et_rechargeMoney"
         android:layout_marginTop="20dp"
         android:layout_centerHorizontal="true"
