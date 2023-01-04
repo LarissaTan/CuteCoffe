@@ -69,17 +69,13 @@ public class PayActivity extends AppCompatActivity {
         setActionBar();
     }
 
-    /*设置ActionBar*/
     private void setActionBar() {
         setSupportActionBar(toolbar);
-        /*显示Home图标*/
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
-        //设置不显示项目名称
         getSupportActionBar().setDisplayShowTitleEnabled(false);
     }
 
     @Override
-    //为toolbar设置返回按钮
     public boolean onOptionsItemSelected(@NonNull MenuItem item) {
         if(item.getItemId() == android.R.id.home)
         {
@@ -96,17 +92,11 @@ public class PayActivity extends AppCompatActivity {
         toolbar = findViewById(R.id.toolbar);
         tv_bar_title = findViewById(R.id.tv_bar_title);
         tv_bar_title.setText("Submit");
-
-        //初始化recyclerView
         rv_pay.setItemAnimator(null);
         payRVAdapter = new PayRVAdapter(data);
         rv_pay.setLayoutManager(new LinearLayoutManager(AppContext.getInstance()));
         rv_pay.setAdapter(payRVAdapter);
 
-
-        /**
-         * 循环获得总价格
-         */
         for (int i= 0;i<data.size();i++){
             b1 = new BigDecimal(data.get(i).getPrice().trim());
             b2 = new BigDecimal(data.get(i).getNumber());
