@@ -107,7 +107,7 @@ public class RegisterActivity extends AppCompatActivity implements View.OnClickL
                 userinfo.setPhoneNumb(phoneNumb);
                 dialog = new AlertDialog.Builder(this).setTitle("Check the information first please~~")
                         .setMessage("name：" + userName + '\n' + "pwd：" + password + '\n' + "phone：" + phoneNumb + '\n')
-                        .setIcon(R.mipmap.ic_shop)
+                        .setIcon(R.drawable.icon)
                         .setPositiveButton("Confirm", new DialogInterface.OnClickListener() {
                             @Override
                             public void onClick(DialogInterface dialogInterface, int i) {
