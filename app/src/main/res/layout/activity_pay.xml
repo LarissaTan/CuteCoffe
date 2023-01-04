@@ -14,11 +14,10 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="50dp"
-        android:background="@color/color666"
+        android:background="#45B39C"
         android:text="Please check about the information"
         android:textColor="@color/black"
-        android:textSize="20dp"
-        android:textStyle="bold" />
+        android:textSize="18sp"/>
 
     <RelativeLayout
         android:layout_below="@+id/tip"

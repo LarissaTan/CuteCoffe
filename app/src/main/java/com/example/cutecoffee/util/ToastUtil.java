@@ -17,15 +17,4 @@ public class ToastUtil {
     {
             Toast.makeText(AppContext.getInstance(), message, Toast.LENGTH_SHORT).show();
     }
-
-    /**
-     * 长时间显示Toast
-     *
-     * @param message
-     */
-    public static void showLong( String message)
-    {
-            Toast.makeText(AppContext.getInstance(), message, Toast.LENGTH_LONG).show();
-    }
-
 }

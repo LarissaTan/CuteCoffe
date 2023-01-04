@@ -32,9 +32,9 @@ import java.util.List;
 
 public class MyDialog {
     private static CustomDialog dialog;
-    private View view; // dialog布局
-    private View animView; // 商品菜单布局
-    private View dismissView; // 半透明遮罩布局
+    private View view;
+    private View animView;
+    private View dismissView;
     private RelativeLayout re_bottow ;
     private RecyclerView recyclerView_carGoods;
     private TextView tv_clean ;
@@ -80,9 +80,9 @@ public class MyDialog {
         tv_total =view.findViewById(R.id.tv_total_dialog);
 
         total = StoreGoodsFragment.total;
-        tv_total.setText("￥ "+StoreGoodsFragment.total);
+        tv_total.setText("$ "+StoreGoodsFragment.total);
         iv_shoppingCar.setImageResource(R.drawable.shoppingcar_full_64);
-        tv_DoShopping.setText("去结算");
+        tv_DoShopping.setText("Pay for it");
         //初始化recyclerView
         recyclerView_carGoods.setItemAnimator(null);
         shoppongCarGoodsAdapter = new ShoppongCarGoodsAdapter(dialogData);
@@ -128,7 +128,7 @@ public class MyDialog {
                 }
                 StoreGoodsFragment.handler.sendEmptyMessage(1);
                 dialog.dismiss();
-                ToastUtil.showShort("购物车已清空");
+                ToastUtil.showShort("Cart is empty");
             }
         });
 
@@ -140,17 +140,15 @@ public class MyDialog {
         });
 
 
-        // 设置dialog的位置
         Window dialogWindow = dialog.getWindow();
         dialogWindow.getDecorView().setPadding(0, 0, 0, 0);
-        dialogWindow.setBackgroundDrawableResource(android.R.color.transparent);//背景透明，不然会有个白色的东东
-//        dialogWindow.setWindowAnimations(R.style.dialogWindowAnim); //不使用窗口弹出动画
+        dialogWindow.setBackgroundDrawableResource(android.R.color.transparent);//背景透明
+//        dialogWindow.setWindowAnimations(R.style.dialogWindowAnim);
         WindowManager.LayoutParams lp = dialogWindow.getAttributes();
 
-        lp.width = WindowManager.LayoutParams.MATCH_PARENT; // 宽度
-        lp.height = WindowManager.LayoutParams.MATCH_PARENT; // 高度
+        lp.width = WindowManager.LayoutParams.MATCH_PARENT;
+        lp.height = WindowManager.LayoutParams.MATCH_PARENT;
         dialogWindow.setAttributes(lp);
-        // 设置dialog为底部
         dialogWindow.setGravity(Gravity.BOTTOM);
     }
 

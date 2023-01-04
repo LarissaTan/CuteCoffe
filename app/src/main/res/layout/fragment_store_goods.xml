@@ -71,7 +71,7 @@
             android:textColor="@color/black"
             android:textStyle="bold"
             android:gravity="center"
-            android:text="暂无商品"
+            android:text="Empty"
             android:background="@drawable/textview_shape"
             android:layout_width="100dp"
             android:layout_height="40dp"/>

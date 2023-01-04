@@ -17,10 +17,9 @@
     <TextView
         android:id="@+id/tip"
         android:layout_marginTop="50dp"
-        android:textStyle="bold"
         android:textColor="@color/black"
-        android:background="@color/color666"
-        android:textSize="20dp"
+        android:background="#45B39C"
+        android:textSize="18sp"
         android:text="Here comes your order: "
         android:layout_width="match_parent"
         android:layout_height="wrap_content"/>
