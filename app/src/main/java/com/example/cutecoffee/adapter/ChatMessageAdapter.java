@@ -26,12 +26,12 @@ public class ChatMessageAdapter  extends RecyclerView.Adapter<RecyclerView.ViewH
     private List<ChatMessageBean> messageBeans;
     private int MyUserID = MySQLiteHelper.getInstance(AppContext.getInstance()).GetUserId(MainActivity.username);
 
-    //构造方法
+
     public ChatMessageAdapter(List<ChatMessageBean> chatMessageBeans){
         this.messageBeans = chatMessageBeans;
     }
 
-    //设置枚举，判断类型
+
     public enum ItemType {
         MY, OTHERS
     }
@@ -75,7 +75,6 @@ public class ChatMessageAdapter  extends RecyclerView.Adapter<RecyclerView.ViewH
     }
 
     /**
-     * 拿到此位置条目的类型
      * @param position
      * @return
      */
@@ -89,9 +88,8 @@ public class ChatMessageAdapter  extends RecyclerView.Adapter<RecyclerView.ViewH
 
     }
 
-    /**
-     * 本人的view Holder
-     */
+
+
     class ViewHolderMy extends RecyclerView.ViewHolder {
 
         private ImageView iv_chat;
@@ -127,15 +125,11 @@ public class ChatMessageAdapter  extends RecyclerView.Adapter<RecyclerView.ViewH
         }
     }
 
-
-
-    //刷新信息
     public void refreshMessages(){
         initData();
        notifyDataSetChanged();
     }
 
-    //刷新数据源
     private  void initData(){
         messageBeans = MySQLiteHelper.getInstance(AppContext.getInstance()).queryAllMessages();
     }

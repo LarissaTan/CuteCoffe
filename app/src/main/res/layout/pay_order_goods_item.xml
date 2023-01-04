@@ -27,15 +27,19 @@
             android:layout_centerVertical="true"
             android:layout_marginLeft="8dp"
             app:cardCornerRadius="5dp"
+            android:background="@drawable/bg_dialog"
             app:cardElevation="3dp">
+
 
             <androidx.appcompat.widget.AppCompatImageView
                 android:id="@+id/iv_pay_goods"
-                android:layout_width="60dp"
-                android:layout_height="60dp"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:layout_margin="20dp"
                 android:scaleType="centerCrop"
                 android:src="@mipmap/goods_bc" />
         </androidx.cardview.widget.CardView>
+
 
         <TextView
             android:id="@+id/tv_pay_Name"

@@ -90,10 +90,6 @@ public class OrderDetailsActivity extends AppCompatActivity {
         rv_orderDetails.setLayoutManager(new LinearLayoutManager(AppContext.getInstance()));
         rv_orderDetails.setAdapter(payRVAdapter);
 
-
-        /**
-         * 循环数据集，获取价格总数
-         */
         for (int i= 0;i<goodsData.size();i++){
             b1 = new BigDecimal(goodsData.get(i).getPrice().trim());
             b2 = new BigDecimal(goodsData.get(i).getNumber());

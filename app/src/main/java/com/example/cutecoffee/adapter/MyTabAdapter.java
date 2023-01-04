@@ -34,7 +34,6 @@ public class MyTabAdapter extends FragmentPagerAdapter {
     }
 
     /**
-     * //此方法用来显示tab上的名字
      * @param position
      * @return
      */

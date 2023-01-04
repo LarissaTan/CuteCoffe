@@ -278,36 +278,30 @@ public class StoreGoodsFragment extends Fragment {
         public void convert(BaseRecyclerHolder holder, final int position) {
             switch (getmData().get(position).getPicNumb()){
                 case "0":
-                    ((ImageView)holder.getView(R.id.iv_goods)).setImageResource(R.drawable.goods_1);
+                    ((ImageView)holder.getView(R.id.iv_goods)).setImageResource(R.drawable.c1);
                     break;
                 case "1":
-                    ((ImageView)holder.getView(R.id.iv_goods)).setImageResource(R.drawable.goods_2);
+                    ((ImageView)holder.getView(R.id.iv_goods)).setImageResource(R.drawable.c2);
                     break;
                 case "2":
-                    ((ImageView)holder.getView(R.id.iv_goods)).setImageResource(R.drawable.goods_3);
+                    ((ImageView)holder.getView(R.id.iv_goods)).setImageResource(R.drawable.c3);
                     break;
                 case "3":
-                    ((ImageView)holder.getView(R.id.iv_goods)).setImageResource(R.drawable.goods_4);
+                    ((ImageView)holder.getView(R.id.iv_goods)).setImageResource(R.drawable.c4);
                     break;
                 case "4":
-                    ((ImageView)holder.getView(R.id.iv_goods)).setImageResource(R.drawable.goods_5);
+                    ((ImageView)holder.getView(R.id.iv_goods)).setImageResource(R.drawable.soda);
                     break;
                 case "5":
-                    ((ImageView)holder.getView(R.id.iv_goods)).setImageResource(R.drawable.goods_6);
+                    ((ImageView)holder.getView(R.id.iv_goods)).setImageResource(R.drawable.cake);
                     break;
                 case "6":
-                    ((ImageView)holder.getView(R.id.iv_goods)).setImageResource(R.drawable.goods_7);
-                    break;
-                case "7":
-                    ((ImageView)holder.getView(R.id.iv_goods)).setImageResource(R.drawable.goods_8);
-                    break;
-                case "8":
-                    ((ImageView)holder.getView(R.id.iv_goods)).setImageResource(R.drawable.goods_9);
-                    break;
-                case "9":
-                    ((ImageView)holder.getView(R.id.iv_goods)).setImageResource(R.drawable.goods_10);
+                    ((ImageView)holder.getView(R.id.iv_goods)).setImageResource(R.drawable.cookie);
                     break;
             }
+
+
+
             ((TextView)holder.getView(R.id.tvName)).setText(getmData().get(position).getName());
             ((TextView)holder.getView(R.id.tvContant)).setText(getmData().get(position).getContent());
             ((TextView)holder.getView(R.id.tvPrice)).setText("$:"+getmData().get(position).getPrice());

@@ -63,7 +63,6 @@ public class AccountFragment extends Fragment {
 
     private void refreshMoney(){
         newMoney = MySQLiteHelper.getInstance(getContext()).getUserMoneyFromUserName(MainActivity.username);
-        //不使用科学计数法显示double类型数据，解决显示错误问题
         df = new DecimalFormat("0.00");
         result = df.format(newMoney);
         tv_money.setText(result +"$");

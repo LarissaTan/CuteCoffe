@@ -14,10 +14,6 @@ import com.example.cutecoffee.bean.OrderBean;
 import com.example.cutecoffee.util.AppContext;
 import java.util.List;
 
-
-/**
- * 订单界面的适配器
- */
 public class OrderAdapter  extends RecyclerView.Adapter<OrderAdapter.ViewHolder>{
 
     private LayoutInflater inflater ;

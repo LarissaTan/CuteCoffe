@@ -18,12 +18,10 @@ import java.math.BigDecimal;
 import java.util.List;
 
 
-/**
- * 购物车dialog的recyclerView的适配器
- */
+
 public class ShoppongCarGoodsAdapter  extends  RecyclerView.Adapter<ShoppongCarGoodsAdapter.ViewHolder>{
 
-    //设置数据源
+
     private LayoutInflater inflater ;
     private List<GoodsArrayBean.ItemR> data;
     public static double total;
@@ -34,7 +32,7 @@ public class ShoppongCarGoodsAdapter  extends  RecyclerView.Adapter<ShoppongCarG
     private static BigDecimal one ;
     private static double a ;
 
-    //适配器的构造方法
+
     public ShoppongCarGoodsAdapter(List<GoodsArrayBean.ItemR> data){
         this.data = data;
     }
@@ -56,36 +54,28 @@ public class ShoppongCarGoodsAdapter  extends  RecyclerView.Adapter<ShoppongCarG
     public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
         switch (data.get(position).getPicNumb()){
             case "0":
-                holder.iv_pic.setImageResource(R.drawable.goods_1);
+                holder.iv_pic.setImageResource(R.drawable.c1);
                 break;
             case "1":
-                holder.iv_pic.setImageResource(R.drawable.goods_2);
+                holder.iv_pic.setImageResource(R.drawable.c2);
                 break;
             case "2":
-                holder.iv_pic.setImageResource(R.drawable.goods_3);
+                holder.iv_pic.setImageResource(R.drawable.c3);
                 break;
             case "3":
-                holder.iv_pic.setImageResource(R.drawable.goods_4);
+                holder.iv_pic.setImageResource(R.drawable.c4);
                 break;
             case "4":
-                holder.iv_pic.setImageResource(R.drawable.goods_5);
+                holder.iv_pic.setImageResource(R.drawable.soda);
                 break;
             case "5":
-                holder.iv_pic.setImageResource(R.drawable.goods_6);
+                holder.iv_pic.setImageResource(R.drawable.cake);
                 break;
             case "6":
-                holder.iv_pic.setImageResource(R.drawable.goods_7);
-                break;
-            case "7":
-                holder.iv_pic.setImageResource(R.drawable.goods_8);
-                break;
-            case "8":
-                holder.iv_pic.setImageResource(R.drawable.goods_9);
-                break;
-            case "9":
-                holder.iv_pic.setImageResource(R.drawable.goods_10);
+                holder.iv_pic.setImageResource(R.drawable.cookie);
                 break;
         }
+
         holder.tv_name.setText(data.get(position).getName());
         holder.tv_price.setText(data.get(position).getPrice());
         holder.tv_number.setText(data.get(position).getNumber()+"");

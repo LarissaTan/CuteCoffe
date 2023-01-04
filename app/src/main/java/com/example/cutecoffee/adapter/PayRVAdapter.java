@@ -13,16 +13,13 @@ import com.example.cutecoffee.bean.GoodsArrayBean;
 
 import java.util.List;
 
-/**
- * 付款界面recyclerView的适配器
- */
+
+
 public class PayRVAdapter  extends RecyclerView.Adapter<PayRVAdapter.ViewHolder> {
 
-    //设置数据源
     private LayoutInflater inflater ;
     private List<GoodsArrayBean.ItemR> data;
 
-    //适配器的构造方法
     public PayRVAdapter(List<GoodsArrayBean.ItemR> data){
         this.data = data;
     }
