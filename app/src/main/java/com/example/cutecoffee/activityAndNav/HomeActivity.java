@@ -24,6 +24,7 @@ public class HomeActivity extends AppCompatActivity implements View.OnClickListe
     private FrameLayout nav_frag;
     private int UserID ;
     private OrderFragment orderFragment = new OrderFragment();
+    private HomeFragment homeFragment = new HomeFragment();
 
 
     @Override
@@ -40,7 +41,7 @@ public class HomeActivity extends AppCompatActivity implements View.OnClickListe
     private void ininView() {
         navigationView = findViewById(R.id.navigation_view);
         UserID = MySQLiteHelper.getInstance(getApplicationContext()).GetUserId(MainActivity.username);
-        replacementFragment(orderFragment);
+        replacementFragment(homeFragment);
     }
 
     private void hideScrollBar() {
@@ -51,6 +52,9 @@ public class HomeActivity extends AppCompatActivity implements View.OnClickListe
         navigationView.setOnNavigationItemSelectedListener(item -> {
 
             switch (item.getItemId()){
+                case R.id.single_0:
+                    replacementFragment(homeFragment);
+                    break;
                 case R.id.single_1:
                     replacementFragment(orderFragment);
                     break;

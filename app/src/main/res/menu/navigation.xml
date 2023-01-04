@@ -4,6 +4,10 @@
         android:id="@+id/group1"
         android:checkableBehavior="single">
         <item
+            android:id="@+id/single_0"
+            android:icon="@mipmap/plan"
+            android:title="Home" />
+        <item
             android:id="@+id/single_1"
             android:icon="@mipmap/plan"
             android:title="Order List" />
