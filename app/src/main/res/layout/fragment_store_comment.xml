@@ -4,7 +4,7 @@
     android:layout_height="match_parent"
     android:layout_marginRight="8dp"
     android:layout_marginLeft="8dp"
-    android:background="#c2c2c2"
+    android:background="#D4D4D4"
     android:padding="16dp" >
 
     <LinearLayout
@@ -28,7 +28,7 @@
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="45dp"
+        android:layout_height="70dp"
         android:layout_marginTop="3dp"
         android:layout_alignParentBottom="true"
         android:orientation="horizontal" >
@@ -41,17 +41,20 @@
             android:layout_weight="1"
             android:textSize="20dp"
             android:gravity="center|left"
-            android:background="@color/white"
+            android:background="@drawable/bg_dialog"
             android:padding="8dp" />
 
         <Button
             android:id="@+id/btn_message_send"
-            android:text="发送"
+            android:text="Send"
             style="?android:attr/buttonStyleSmall"
             android:layout_width="64dp"
             android:layout_marginLeft="8dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="10dp"
             android:gravity="center"
             android:layout_height="match_parent"
+            android:textAllCaps="false"
             android:layout_gravity="center|right"
             android:layout_marginRight="4dp" />
     </LinearLayout>

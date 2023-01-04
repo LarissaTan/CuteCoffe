@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <color name="colorPrimary">#45B39C</color>
-    <color name="colorPrimaryDark">#00574B</color>
+    <color name="colorPrimaryDark">#45B39C</color>
     <color name="colorAccent">#9C8383</color>
     <color name="white">#ffffffff</color>
     <color name="black">#ff000000</color>
@@ -14,7 +14,7 @@
     <color name="cyan">#ff00ffff</color>
     <color name="magenta">#ffff00ff</color>
     <color name="transparent">#00000000</color>
-    <color name="orange">#FDCB6B</color>
+    <color name="orange">#45B39C</color>
     <color name="transparent_background">#90000000</color>
     <color name="card_bg_green">#bb22ee00</color>
     <color name="card_bg_red">#bbff0000</color>
@@ -29,7 +29,7 @@
     <color name="popup_window_bg">#ffcccccc</color>
     <color name="parting_line_bg">#ffd7d7d7</color>
     <color name="title_text_color">#ff999999</color>
-    <color name="colorfff">#C96A3B</color>
+    <color name="colorfff">#B7E2D9</color>
     <color name="color16333333">#d3a649</color>
     <color name="color666">#61ABE4</color>
     <color name="test1">#114D8B</color>

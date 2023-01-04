@@ -30,12 +30,9 @@ public class StoreGoodsActivity extends AppCompatActivity {
     private StoreGoodsFragment storeGoodsFragment;
     private StoreCommentFragment storeCommentFragment;
     private List<Fragment> fragments = new ArrayList<>();
-
-    private TextView tv_bar_title;
     private Toolbar toolbar;
     private String storeID;
     private StoreBean storeBean;
-    private ImageView iv_pic;
     private TextView tv_storeName;
     private TextView tv_storeSell;
 
@@ -78,15 +75,10 @@ public class StoreGoodsActivity extends AppCompatActivity {
 
     private void initView() {
         toolbar = findViewById(R.id.toolbar);
-        tv_bar_title = findViewById(R.id.tv_bar_title);
-        tv_bar_title.setText("Details");
         tabLayout = findViewById(R.id.home_newsTab);
         home_news_viewPager = findViewById(R.id.home_news_vp);
-        iv_pic = findViewById(R.id.iv_store_act);
         tv_storeName = findViewById(R.id.tv_storeName_act);
         tv_storeSell = findViewById(R.id.tv_store_sell_act);
-        iv_pic.setImageResource(R.mipmap.store_1);
-
 
         tv_storeName.setText(storeBean.getStoreName());
         tv_storeSell.setText("Monthly sales："+storeBean.getStoreSell());
