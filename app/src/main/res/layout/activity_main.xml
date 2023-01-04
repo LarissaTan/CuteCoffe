@@ -13,13 +13,13 @@
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Cute coffee"
-        android:textStyle="bold"
         android:layout_gravity="center"
         android:layout_marginTop="50dp"
-        android:textSize="40dp"
+        android:text="Cute coffee"
         android:textColor="#000000"
-        />
+        android:textSize="40dp"
+        android:textStyle="bold"
+        app:fontFamily="@font/abeezee_italic" />
 
     <ImageView
         android:layout_marginTop="30dp"
@@ -46,23 +46,25 @@
             android:layout_height="wrap_content"
             android:layout_gravity="center"
             >
+
             <TextView
                 android:id="@+id/textView1"
                 android:layout_width="100dp"
                 android:layout_height="40dp"
                 android:layout_gravity="center"
+                android:layout_marginLeft="40dp"
                 android:gravity="center"
                 android:text="Name"
-                android:layout_marginLeft="40dp"
                 android:textColor="@color/black"
-                android:textSize="22sp" />
+                android:textSize="22sp"
+                app:fontFamily="@font/amaranth" />
 
             <EditText
                 android:id="@+id/et_username"
                 android:layout_width="220dp"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
-                android:hint="Please enter your name"
+                android:hint="  please enter your name"
                 android:textColor="#000000"
                 tools:ignore="TouchTargetSizeCheck" />
 
@@ -95,7 +97,8 @@
                 android:layout_marginLeft="40dp"
                 android:text="Password"
                 android:textColor="@color/black"
-                android:textSize="22sp" />
+                android:textSize="22sp"
+                app:fontFamily="@font/amaranth"/>
 
 
             <EditText
@@ -103,7 +106,7 @@
                 android:layout_width="220dp"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
-                android:hint="please enter password"
+                android:hint="  please enter password"
                 android:inputType="textPassword"
                 android:textColor="#000000"
                 tools:ignore="TouchTargetSizeCheck" />
@@ -155,6 +158,7 @@
                 android:layout_gravity="center"
                 android:textColor="@color/black"
                 android:radius="50dp"
+                app:fontFamily="@font/amaranth"
                 android:textSize="16sp" />
 
             <TextView
@@ -173,18 +177,13 @@
                 android:radius="30dp"
                 android:textAllCaps="false"
                 android:textColor="@color/black"
+                app:fontFamily="@font/amaranth"
                 android:textSize="16sp" />
 
 
 
         </LinearLayout>
 
-
-
     </LinearLayout>
-
-
-
-
 
 </LinearLayout>
