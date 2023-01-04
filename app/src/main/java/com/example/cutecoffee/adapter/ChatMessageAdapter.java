@@ -58,51 +58,11 @@ public class ChatMessageAdapter  extends RecyclerView.Adapter<RecyclerView.ViewH
     public void onBindViewHolder(@NonNull RecyclerView.ViewHolder holder, int position) {
         //根据holder的类型不同，显示不同的数据
         if (holder instanceof ViewHolderMy) {
-            switch (messageBeans.get(position).getImg_id()){
-                case "1":
-                    ((ViewHolderMy) holder).iv_chat.setImageResource(R.drawable.tx_1_48);
-                    break;
-                case "2" :
-                    ((ViewHolderMy) holder).iv_chat.setImageResource(R.drawable.tx_2_48);
-                    break;
-                case "3":
-                    ((ViewHolderMy) holder).iv_chat.setImageResource(R.drawable.tx_3_48);
-                    break;
-                case "4":
-                    ((ViewHolderMy) holder).iv_chat.setImageResource(R.drawable.tx_4_48);
-                    break;
-                case "5":
-                    ((ViewHolderMy) holder).iv_chat.setImageResource(R.drawable.tx_5_48);
-                    break;
-                case "6":
-                    ((ViewHolderMy) holder).iv_chat.setImageResource(R.drawable.tx_6_48);
-                    break;
-            }
          //   ((ViewHolderMy) holder).iv_chat.setImageResource(R.drawable.my_tx_48);
             ((ViewHolderMy) holder).tv_message.setText(messageBeans.get(position).getMessage());
             ((ViewHolderMy) holder).tv_rightUserName.setText(messageBeans.get(position).getUserName());
             ((ViewHolderMy) holder).tv_right_time.setText(messageBeans.get(position).getTime());
         } else if (holder instanceof ViewHolderOther) {
-            switch (messageBeans.get(position).getImg_id()){
-                case "1":
-                    ((ViewHolderOther) holder).iv_chat.setImageResource(R.drawable.tx_1_48);
-                    break;
-                case "2" :
-                    ((ViewHolderOther) holder).iv_chat.setImageResource(R.drawable.tx_2_48);
-                    break;
-                case "3":
-                    ((ViewHolderOther) holder).iv_chat.setImageResource(R.drawable.tx_3_48);
-                    break;
-                case "4":
-                    ((ViewHolderOther) holder).iv_chat.setImageResource(R.drawable.tx_4_48);
-                    break;
-                case "5":
-                    ((ViewHolderOther) holder).iv_chat.setImageResource(R.drawable.tx_5_48);
-                    break;
-                case "6":
-                    ((ViewHolderOther) holder).iv_chat.setImageResource(R.drawable.tx_6_48);
-                    break;
-            }
             ((ViewHolderOther) holder).tv_message.setText(messageBeans.get(position).getMessage());
             ((ViewHolderOther) holder).tv_leftUserName.setText(messageBeans.get(position).getUserName());
             ((ViewHolderOther) holder).tv_left_time.setText(messageBeans.get(position).getTime());
@@ -154,14 +114,13 @@ public class ChatMessageAdapter  extends RecyclerView.Adapter<RecyclerView.ViewH
      */
     class ViewHolderOther extends RecyclerView.ViewHolder {
 
-        private ImageView iv_chat;
+
         private TextView tv_message;
         private TextView tv_leftUserName;
         private TextView tv_left_time;
 
         public ViewHolderOther(@NonNull View itemView) {
             super(itemView);
-            iv_chat = itemView.findViewById(R.id.iv_icon);
             tv_message = itemView.findViewById(R.id.tv_message_left);
             tv_leftUserName = itemView.findViewById(R.id.tv_left_userName);
             tv_left_time = itemView.findViewById(R.id.tv_left_time);

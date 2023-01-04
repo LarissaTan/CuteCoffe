@@ -60,8 +60,6 @@ public class HomeActivity extends AppCompatActivity implements View.OnClickListe
                     break;
                 case R.id.single_2:
                     replacementFragment(accountFragment);
-                    //startActivity(new Intent(HomeAllStoresActivity.this, MyAccountActivity.class));
-                    //startActivity(new Intent(HomeActivity.this,StoreGoodsActivity.class));
                     break;
                 case R.id.single_4:
                     startActivity(new Intent(HomeActivity.this, MainActivity.class));

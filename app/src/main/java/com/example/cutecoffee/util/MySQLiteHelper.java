@@ -185,7 +185,7 @@ public class MySQLiteHelper {
                 new String[] {userName});
         if (cursor != null && cursor.getCount() > 0) {
             while (cursor.moveToNext()) {
-                money = cursor.getDouble(7);
+                money = cursor.getDouble(4);
             }
         }
         return money;
