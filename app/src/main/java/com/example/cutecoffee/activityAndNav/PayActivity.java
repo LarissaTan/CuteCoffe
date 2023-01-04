@@ -127,7 +127,7 @@ public class PayActivity extends AppCompatActivity {
                 //ToastUtil.showShort("总金额"+total);
                 dialog = new AlertDialog.Builder(PayActivity.this).setTitle("Are you sure to pay？")
                         .setMessage("Total：" + total)
-                        .setIcon(R.mipmap.ic_shop)
+                        .setIcon(R.drawable.icon)
                         .setPositiveButton("Confirm", new DialogInterface.OnClickListener() {
                             @Override
                             public void onClick(DialogInterface dialogInterface, int i) {

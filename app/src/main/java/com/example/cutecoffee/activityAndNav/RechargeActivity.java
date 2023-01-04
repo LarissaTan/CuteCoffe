@@ -39,16 +39,12 @@ public class RechargeActivity extends AppCompatActivity {
         setActionBar();
     }
 
-    /*设置ActionBar*/
     private void setActionBar() {
         setSupportActionBar(toolbar);
-        /*显示Home图标*/
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
-        //设置不显示项目名称
         getSupportActionBar().setDisplayShowTitleEnabled(false);
     }
     @Override
-    //为toolbar设置返回按钮
     public boolean onOptionsItemSelected(@NonNull MenuItem item) {
         if(item.getItemId() == android.R.id.home)
         {
@@ -61,9 +57,7 @@ public class RechargeActivity extends AppCompatActivity {
 
     @Override
     public boolean onKeyDown(int keyCode, KeyEvent event) {
-        if (keyCode ==event.KEYCODE_BACK){//通过keyCode的值来判断点击的是哪一个键
-
-            //这里面表示处理的对应的事件
+        if (keyCode ==event.KEYCODE_BACK){
             setResult(1);
             finish();
 
@@ -78,7 +72,7 @@ public class RechargeActivity extends AppCompatActivity {
 
         toolbar = findViewById(R.id.toolbar);
         tv_bar_title = findViewById(R.id.tv_bar_title);
-        tv_bar_title.setText("充值");
+        tv_bar_title.setText("Charge");
         et_rechargeMoney= findViewById(R.id.et_rechargeMoney);
         btn_doRecharge = findViewById(R.id.btn_doRecharge);
         //充值到账户的点击事件
@@ -87,24 +81,24 @@ public class RechargeActivity extends AppCompatActivity {
             public void onClick(View view) {
                 money1 =et_rechargeMoney.getText().toString();
                 if (money1.equals("0")){
-                    ToastUtil.showShort("金额不能为0");
+                    ToastUtil.showShort("The number can not be 0");
                 }else if (TextUtils.isEmpty(money1)) {
-                    ToastUtil.showShort("金额不能为空");
+                    ToastUtil.showShort("The number can not be null");
                 }else {
                     double m1 = Double.parseDouble(money1);
                     currentAccountMoney = currentAccountMoney + m1;
-                    dialog1 = new AlertDialog.Builder(RechargeActivity.this).setTitle("是否确认充值")
-                            .setMessage("充值账户：" + MainActivity.username + '\n' + "金  额：" + money1 +"元")
-                            .setIcon(R.mipmap.ic_launcher)
-                            .setPositiveButton("确定", new DialogInterface.OnClickListener() {
+                    dialog1 = new AlertDialog.Builder(RechargeActivity.this).setTitle("Charge Confirm")
+                            .setMessage("Account：" + MainActivity.username + '\n' + "Money：" + money1 +"$")
+                            .setIcon(R.drawable.icon)
+                            .setPositiveButton("Confirm", new DialogInterface.OnClickListener() {
                                 @Override
                                 public void onClick(DialogInterface dialogInterface, int i) {
                                     MySQLiteHelper.getInstance(getBaseContext()).RechargeMoney(MainActivity.username, currentAccountMoney);
-                                    ToastUtil.showShort("充值成功");
+                                    ToastUtil.showShort("Charge successfully");
                                     et_rechargeMoney.setText("");
                                 }
                             })
-                            .setNegativeButton("取消", null)
+                            .setNegativeButton("Cancel", null)
                             .create();
                     dialog1.show();
                 }
